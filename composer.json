@@ -1,0 +1,21 @@
+{
+    "name": "h8every1/yii2-requirejs-view",
+    "description": "Yii2 View class with ability to register RequireJS modules",
+    "type": "yii2-extension",
+    "keywords": ["yii2","extension","requirejs","modules","view"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Anton Syuvaev",
+            "email": "h8every1@gmail.com"
+        }
+    ],
+    "require": {
+        "yiisoft/yii2": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "h8every1\\requirejsview\\": ""
+        }
+    }
+}
