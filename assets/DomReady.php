@@ -1,10 +1,7 @@
 <?php
 namespace h8every1\requirejsview\assets;
 
-
-use yii\web\AssetBundle;
-
-class DomReady extends AssetBundle
+class DomReady extends RequireJsAssetBundle
 {
 
     public $sourcePath = '@bower/requirejs-domready';

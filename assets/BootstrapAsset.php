@@ -6,10 +6,7 @@
 
 namespace h8every1\requirejsview\assets;
 
-
-use yii\web\AssetBundle;
-
-class BootstrapAsset extends AssetBundle
+class BootstrapAsset extends RequireJsAssetBundle
 {
     public $sourcePath = '@bower/bootstrap/dist';
     public $js = [

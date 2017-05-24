@@ -38,7 +38,7 @@ class MainJsAction extends Action
 
         foreach ($this->options['modules'] as $module) {
 
-            if (!class_exists($module)) {
+            if ( ! class_exists($module) || ! is_a($module, assets\RequireJsAssetBundle::className())) {
                 continue;
             }
 

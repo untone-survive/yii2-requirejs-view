@@ -2,9 +2,7 @@
 namespace h8every1\requirejsview\assets;
 
 
-use yii\web\AssetBundle;
-
-class Angular extends AssetBundle
+class Angular extends RequireJsAssetBundle
 {
 
     public $sourcePath = '@bower/angular';

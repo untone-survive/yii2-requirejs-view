@@ -1,9 +1,7 @@
 <?php
 namespace h8every1\requirejsview\assets;
 
-use yii\web\AssetBundle;
-
-class JqueryAsset extends AssetBundle
+class JqueryAsset extends RequireJsAssetBundle
 {
     public $sourcePath = '@bower/jquery/dist';
     public $js = [

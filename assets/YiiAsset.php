@@ -1,10 +1,7 @@
 <?php
 namespace h8every1\requirejsview\assets;
 
-
-use yii\web\AssetBundle;
-
-class YiiAsset extends AssetBundle
+class YiiAsset extends RequireJsAssetBundle
 {
     public $sourcePath = '@yii/assets';
     public $js = [
