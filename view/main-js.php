@@ -11,7 +11,7 @@ var scripts = document.getElementsByTagName('script');
 
 for (var i = 0, l = scripts.length; i < l; i++) {
     if (scripts[i].getAttribute('data-main') && scripts[i].getAttribute('data-modules')) {
-        modules = scripts[i].getAttribute('data-modules');
+        modules = scripts[i].getAttribute('data-modules').split(',');
         break;
     }
 }
