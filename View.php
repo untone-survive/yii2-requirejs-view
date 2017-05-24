@@ -44,7 +44,7 @@ class View extends \yii\web\View
      */
     public function getModulesList()
     {
-        return implode(',', $this->getModules());
+        return json_encode($this->getModules());
     }
 
     /**
