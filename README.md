@@ -87,6 +87,64 @@ class SiteController extends Controller
 }
 ```
 
+Generating `main.js` using `AssetBundle`s
+---
+
+This extension provides an `MainJsAction` class that can be used to  generate `main.js` file that automatically `require()`s all modules registered for a webpage.
+
+You can use existing controller or create a new one. Them you must register action like this:
+
+```php
+class RequireJsController extends Controller
+{
+
+    public function actions()
+    {
+        return [
+            'main'=> [         // you can use whatever name you like
+                'class'=> '\h8every1\requirejsview\MainJsAction',
+                'options'=>[
+                    'modules'=>[
+                        '\h8every1\requirejsview\assets\YiiAsset',
+                        '\h8every1\requirejsview\assets\JqueryAsset',
+                        '\h8every1\requirejsview\assets\ExampleAsset',
+                    ]
+                ],
+            ],
+        ];
+    }
+
+}
+```
+
+And then in your `View` class setup provide `$mainJsUrl = ['<contollerName>/<actionName>']`. For the example above the setup will look like this;
+
+```php
+ 'components' => [
+    ...
+    'view'=> [
+        'class'=> 'h8every1\requirejsview\View',
+        'mainJsUrl'=> ['/require-js/main'],
+    ],
+    ...
+ ],
+```
+
+You need to provide array of `RequireJsAssetBundle`s as `modules`. Some of such modules are already provided in `assets` folder of the extension.
+ 
+ * JQuery (https://jquery.com)
+ * Bootstrap (https://getbootstrap.com)
+ * Angular (https://angularjs.org)
+ * Lodash (https://lodash.com)
+ * DomReady (https://github.com/requirejs/domReady)
+ * Yii2 asset (yii.js) (http://www.yiiframework.com/doc-2.0/guide-output-client-scripts.html#yii.js)
+ * Example asset for your own modules with ability to use minified versions of files on live site
+ 
+ Note: All 3rd-party scripts for above asset bundles should be installed as [bower assets](https://bower.io/search/) using Composer.
+ 
+ Main difference between `RequireJsAssetBundle` and Yii's default `AssetBundle` is that you need to provide dependedncies between modules not using `$depend` field, but in  `$js` field.
+ 
+ 
 Adding and removing RequireJS modules in view files
 ----
 
@@ -126,7 +184,6 @@ $this->addModule('gmaps');
 
 ?>
 ```
-
 
 Known issues
 ---
