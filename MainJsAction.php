@@ -23,7 +23,7 @@ class MainJsAction extends Action
         $headers = \Yii::$app->response->headers;
         $headers->add('Content-Type', 'text/javascript');
 
-        return $this->controller->renderPartial('@vendor/h8every1/yii2-requirejs-view/main-js', [
+        return $this->controller->renderPartial('@vendor/h8every1/yii2-requirejs-view/view/main-js', [
             'config' => $this->generateConfig()
         ]);
 
