@@ -103,7 +103,7 @@ class View extends \yii\web\View
     public function endBody()
     {
 
-        $assetBundle = $this->registerAssetBundle('h8every1\requirejsview\Asset');
+        $assetBundle = $this->registerAssetBundle('h8every1\requirejsview\RequireJSAsset');
 
         $assetBundle->jsOptions = [
             'data-main'    => \yii\helpers\Url::to($this->mainJsUrl, true),

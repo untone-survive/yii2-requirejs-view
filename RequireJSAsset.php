@@ -9,7 +9,7 @@ namespace h8every1\requirejsview;
 
 use yii\web\AssetBundle;
 
-class Asset extends AssetBundle
+class RequireJSAsset extends AssetBundle
 {
 
     public $sourcePath = '@vendor/h8every1/yii2-requirejs-view/js';
