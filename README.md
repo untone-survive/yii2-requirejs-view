@@ -92,7 +92,7 @@ Generating `main.js` using `AssetBundle`s
 
 This extension provides an `MainJsAction` class that can be used to  generate `main.js` file that automatically `require()`s all modules registered for a webpage.
 
-You can use existing controller or create a new one. Them you must register action like this:
+You can use existing controller or create a new one. Then you must register action like this:
 
 ```php
 class RequireJsController extends Controller
